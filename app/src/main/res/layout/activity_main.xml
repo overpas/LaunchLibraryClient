@@ -6,19 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.activity.MainActivity">
 
+    <FrameLayout
+        android:id="@+id/flMainFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/spbLoading"
+        android:layout_alignParentTop="true" />
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bnvBottomMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@color/colorPrimary"
+        app:itemBackground="@color/colorDarkTransparent"
         app:itemIconTint="@drawable/selector_menu_item"
         app:itemTextColor="@drawable/selector_menu_item"
         app:menu="@menu/bottom_menu" />
 
-    <ProgressBar
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
+        android:background="@color/colorDarkTransparent"
+        android:id="@+id/spbLoading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bnvBottomMenu"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:spb_color="@color/colorAccent"
+        app:spb_colors="@array/progressColors"
+        app:spb_mirror_mode="false"
+        app:spb_progressiveStart_activated="false"
+        app:spb_reversed="false"
+        app:spb_sections_count="3"
+        app:spb_speed="3.0"
+        app:spb_stroke_separator_length="4dp"
+        app:spb_stroke_width="4dp" />
+
 
 </RelativeLayout>
