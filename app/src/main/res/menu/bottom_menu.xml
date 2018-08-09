@@ -3,21 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_events"
+        android:id="@+id/action_launches"
         android:enabled="true"
-        android:icon="@mipmap/ic_events"
-        android:title="@string/text_events"
+        android:icon="@drawable/ic_launches"
+        android:title="@string/text_launches"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_ranking"
+        android:id="@+id/action_rockets"
         android:enabled="true"
-        android:icon="@mipmap/ic_ranking"
-        android:title="@string/text_ranking"
+        android:icon="@drawable/ic_rocket"
+        android:title="@string/text_rockets"
         app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_missions"
+        android:enabled="true"
+        android:icon="@drawable/ic_mission"
+        android:title="@string/text_missions"
+        app:showAsAction="ifRoom" />
+
     <item
         android:id="@+id/action_settings"
         android:enabled="true"
-        android:icon="@mipmap/ic_settings"
+        android:icon="@drawable/ic_settings"
         android:title="@string/text_settings"
         app:showAsAction="ifRoom" />
 

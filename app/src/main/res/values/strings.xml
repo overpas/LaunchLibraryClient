@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Soraac</string>
-    <string name="text_events">Events</string>
-    <string name="text_ranking">Ranking</string>
+    <string name="text_launches">Launches</string>
+    <string name="text_rockets">Rockets</string>
+    <string name="text_missions">Missions</string>
     <string name="text_settings">Settings</string>
 
     <!-- TODO: Remove or change this placeholder text -->

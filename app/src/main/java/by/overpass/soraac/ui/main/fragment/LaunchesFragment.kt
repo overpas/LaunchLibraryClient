@@ -9,13 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import by.overpass.soraac.R
 import by.overpass.soraac.ui.main.adapter.StubRvAdapter
-import kotlinx.android.synthetic.main.fragment_events.*
+import kotlinx.android.synthetic.main.fragment_launches.*
 
-class EventsFragment : Fragment() {
+class LaunchesFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_events, container, false)
+        return inflater.inflate(R.layout.fragment_launches, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

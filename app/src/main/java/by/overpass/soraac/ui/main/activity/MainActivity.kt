@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import by.overpass.soraac.R
 import by.overpass.soraac.extensions.replaceFragment
-import by.overpass.soraac.ui.main.fragment.EventsFragment
+import by.overpass.soraac.ui.main.fragment.LaunchesFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         if (savedInstanceState == null) {
-            replaceFragment(R.id.flMainFragmentContainer, EventsFragment(), false)
+            replaceFragment(R.id.flMainFragmentContainer, LaunchesFragment(), false)
         }
     }
 

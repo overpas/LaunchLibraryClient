@@ -19,8 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.match.activity.MatchActivity" />
-        <activity android:name=".ui.player.activity.PlayerActivity" />
+        <activity android:name=".ui.launch.activity.LaunchActivity" />
+        <activity android:name=".ui.mission.activity.MissionActivity" />
+        <activity android:name=".ui.rocket.activity.RocketActivity" />
+        <activity android:name=".ui.settings.activity.SettingsActivity"></activity>
     </application>
 
 </manifest>

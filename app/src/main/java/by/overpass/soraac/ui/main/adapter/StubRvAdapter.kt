@@ -16,7 +16,7 @@ class StubRvAdapter() : RecyclerView.Adapter<StubRvAdapter.StubViewHolder>() {
         )
     }
 
-    override fun getItemCount() = 10
+    override fun getItemCount() = 20
 
     override fun onBindViewHolder(holder: StubViewHolder, position: Int) {
         (holder.itemView as TextView).text = position.toString()

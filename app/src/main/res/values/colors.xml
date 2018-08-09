@@ -2,14 +2,14 @@
 <resources>
     <color name="colorPrimary">#000000</color>
     <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#008f00</color>
+    <color name="colorAccent">#f28500</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorGold">#f2ca00</color>
-    <color name="colorDarkTransparent">#40000000</color>
+    <color name="colorDarkTransparent">#59000000</color>
     <array name="progressColors">
+        <item>#c96e00</item>
+        <item>#e67e00</item>
         <item>@color/colorAccent</item>
-        <item>#017901</item>
-        <item>#006c00</item>
-        <item>#005e00</item>
+        <item>#ffa200</item>
     </array>
 </resources>
