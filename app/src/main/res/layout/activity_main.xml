@@ -9,8 +9,7 @@
     <FrameLayout
         android:id="@+id/flMainFragmentContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/spbLoading"
+        android:layout_height="match_parent"
         android:layout_alignParentTop="true" />
 
     <android.support.design.widget.BottomNavigationView
@@ -18,13 +17,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@color/colorDarkTransparent"
+        app:itemBackground="@color/colorDark85PercentOpacity"
         app:itemIconTint="@drawable/selector_menu_item"
         app:itemTextColor="@drawable/selector_menu_item"
         app:menu="@menu/bottom_menu" />
 
     <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
-        android:background="@color/colorDarkTransparent"
+        android:background="@color/colorDark85PercentOpacity"
         android:id="@+id/spbLoading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -1,4 +1,4 @@
-package by.overpass.soraac.extensions
+package by.overpass.soraac.ui
 
 import android.support.annotation.IdRes
 import android.support.v4.app.Fragment

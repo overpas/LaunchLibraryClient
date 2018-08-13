@@ -5,7 +5,11 @@
     <color name="colorAccent">#f28500</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorGold">#f2ca00</color>
-    <color name="colorDarkTransparent">#59000000</color>
+    <color name="colorDark35PercentOpacity">#59000000</color>
+    <color name="colorDark50PercentOpacity">#80000000</color>
+    <color name="colorDark80PercentOpacity">#CC000000</color>
+    <color name="colorDark85PercentOpacity">#D9000000</color>
+    <color name="colorLightBlue">#03A9F4</color>
     <array name="progressColors">
         <item>#c96e00</item>
         <item>#e67e00</item>

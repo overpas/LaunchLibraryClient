@@ -2,26 +2,35 @@ package by.overpass.soraac.ui.main.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import by.overpass.soraac.databinding.ItemLaunchBinding
+import by.overpass.soraac.model.pojo.db.Launch
+
 
 class StubRvAdapter() : RecyclerView.Adapter<StubRvAdapter.StubViewHolder>() {
 
+    var launches: List<Launch> = arrayListOf()
+        set(value) {
+            field = value
+            notifyDataSetChanged()
+        }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StubViewHolder {
         return StubViewHolder(
-                LayoutInflater
-                        .from(parent.context)
-                        .inflate(android.R.layout.simple_list_item_1, parent, false)
+                ItemLaunchBinding.inflate(
+                        LayoutInflater.from(parent.context),
+                        parent,
+                        false
+                )
         )
     }
 
-    override fun getItemCount() = 20
+    override fun getItemCount() = launches.size
 
     override fun onBindViewHolder(holder: StubViewHolder, position: Int) {
-        (holder.itemView as TextView).text = position.toString()
+        holder.binding.launch = launches[position]
     }
 
-    class StubViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    class StubViewHolder(val binding: ItemLaunchBinding) : RecyclerView.ViewHolder(binding.root)
 
 }

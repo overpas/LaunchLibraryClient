@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="launch"
+            type="by.overpass.soraac.model.pojo.db.Launch" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        card_view:cardBackgroundColor="@color/colorDark50PercentOpacity"
+        card_view:cardCornerRadius="6dp"
+        card_view:cardElevation="8dp">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivLaunchImage"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_margin="4dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/text_launch_image"
+                android:src="@{launch.rocketImageURL}"/>
+
+            <TextView
+                android:id="@+id/tvLaunchName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@{launch.name}"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintStart_toEndOf="@+id/ivLaunchImage"
+                card_view:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvLaunchDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:maxLines="6"
+                android:text="@{launch.description}"
+                android:textColor="@color/colorWhite"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintStart_toEndOf="@+id/ivLaunchImage"
+                card_view:layout_constraintTop_toBottomOf="@+id/tvLaunchName" />
+
+            <ImageView
+                android:id="@+id/ivLocationMarker"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                card_view:layout_constraintStart_toEndOf="@+id/ivLaunchImage"
+                card_view:layout_constraintTop_toBottomOf="@+id/tvLaunchDescription"
+                card_view:srcCompat="@drawable/ic_location_marker" />
+
+            <TextView
+                android:id="@+id/tvLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:text="@{launch.locationName}"
+                android:textStyle="italic"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintStart_toEndOf="@+id/ivLocationMarker"
+                card_view:layout_constraintTop_toBottomOf="@+id/tvLaunchDescription" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>
