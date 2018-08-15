@@ -10,4 +10,7 @@ interface GetLaunchesService {
     @GET("launch/next/5")
     fun getNext5Launches(): Call<LaunchJsonWrapper>
 
+    @GET("launch/next/20")
+    fun getNext20Launches(): Call<LaunchJsonWrapper>
+
 }

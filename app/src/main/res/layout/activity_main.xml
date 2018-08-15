@@ -17,17 +17,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:elevation="4dp"
         app:itemBackground="@color/colorDark85PercentOpacity"
         app:itemIconTint="@drawable/selector_menu_item"
         app:itemTextColor="@drawable/selector_menu_item"
         app:menu="@menu/bottom_menu" />
 
     <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
-        android:background="@color/colorDark85PercentOpacity"
         android:id="@+id/spbLoading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@id/bnvBottomMenu"
+        android:background="@color/colorDark85PercentOpacity"
+        android:elevation="4dp"
         android:indeterminate="true"
         android:visibility="gone"
         app:spb_color="@color/colorAccent"

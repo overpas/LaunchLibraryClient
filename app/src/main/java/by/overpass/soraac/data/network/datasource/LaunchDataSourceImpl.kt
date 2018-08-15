@@ -17,7 +17,7 @@ class LaunchDataSourceImpl : ILaunchDataSource {
 
     override fun getLaunches(): LiveData<List<Launch>> {
         val launches: MutableLiveData<List<Launch>> = MutableLiveData()
-        launchService.getNext5Launches().enqueue(object : Callback<LaunchJsonWrapper> {
+        launchService.getNext20Launches().enqueue(object : Callback<LaunchJsonWrapper> {
             override fun onFailure(call: Call<LaunchJsonWrapper>?, t: Throwable?) {
             }
 

@@ -26,12 +26,14 @@
 
             <ImageView
                 android:id="@+id/ivLaunchImage"
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/text_launch_image"
-                android:src="@{launch.rocketImageURL}"/>
+                android:src="@{launch.rocketImageURL}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvLaunchName"
@@ -57,7 +59,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:ellipsize="end"
-                android:maxLines="6"
+                android:maxLines="3"
                 android:text="@{launch.description}"
                 android:textColor="@color/colorWhite"
                 card_view:layout_constraintEnd_toEndOf="parent"
@@ -70,6 +72,7 @@
                 android:layout_height="20dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="4dp"
+                android:contentDescription="@string/text_marker"
                 card_view:layout_constraintStart_toEndOf="@+id/ivLaunchImage"
                 card_view:layout_constraintTop_toBottomOf="@+id/tvLaunchDescription"
                 card_view:srcCompat="@drawable/ic_location_marker" />

@@ -5,13 +5,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import by.overpass.soraac.databinding.ItemLaunchBinding
 import by.overpass.soraac.model.pojo.db.Launch
+import by.overpass.soraac.ui.main.listener.OnLaunchClickListener
 
 
-class StubRvAdapter() : RecyclerView.Adapter<StubRvAdapter.StubViewHolder>() {
+class StubRvAdapter : RecyclerView.Adapter<StubRvAdapter.StubViewHolder>() {
 
     var launches: List<Launch> = arrayListOf()
         set(value) {
             field = value
+            // TODO: Use DiffUtil
             notifyDataSetChanged()
         }
 
@@ -29,6 +31,7 @@ class StubRvAdapter() : RecyclerView.Adapter<StubRvAdapter.StubViewHolder>() {
 
     override fun onBindViewHolder(holder: StubViewHolder, position: Int) {
         holder.binding.launch = launches[position]
+        holder.itemView.setOnClickListener(OnLaunchClickListener(launches[position].id!!))
     }
 
     class StubViewHolder(val binding: ItemLaunchBinding) : RecyclerView.ViewHolder(binding.root)

@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import by.overpass.soraac.R
 import by.overpass.soraac.ui.main.adapter.StubRvAdapter
 import by.overpass.soraac.viewmodel.LaunchViewModel
+import by.overpass.soraac.viewmodel.LaunchViewModelFactory
 import kotlinx.android.synthetic.main.fragment_launches.*
 
 class LaunchesFragment : Fragment() {
@@ -26,6 +27,7 @@ class LaunchesFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        setHasOptionsMenu(true)
         activity?.let {
             val activity = it as AppCompatActivity
             activity.setSupportActionBar(toolbar)
@@ -33,7 +35,7 @@ class LaunchesFragment : Fragment() {
         rvLaunchList.layoutManager = LinearLayoutManager(context)
         rvLaunchesAdapter = StubRvAdapter()
         rvLaunchList.adapter = rvLaunchesAdapter
-        launchViewModel = LaunchViewModel.Factory.createStub(this)
+        launchViewModel = LaunchViewModelFactory.createStub(this)
         launchViewModel.launches.observe(this, Observer {
             it?.let { rvLaunchesAdapter.launches = it }
         })
