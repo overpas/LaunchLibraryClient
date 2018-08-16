@@ -26,10 +26,6 @@
         <activity android:name=".ui.mission.activity.MissionActivity" />
         <activity android:name=".ui.rocket.activity.RocketActivity" />
         <activity android:name=".ui.settings.activity.SettingsActivity" />
-        <activity
-            android:name=".ui.launch.activity.LauncActivity"
-            android:label="@string/title_activity_launc"
-            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

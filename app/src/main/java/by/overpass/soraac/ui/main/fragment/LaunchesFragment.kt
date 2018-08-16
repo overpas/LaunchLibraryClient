@@ -36,7 +36,7 @@ class LaunchesFragment : Fragment() {
         rvLaunchesAdapter = StubRvAdapter()
         rvLaunchList.adapter = rvLaunchesAdapter
         launchViewModel = LaunchViewModelFactory.createStub(this)
-        launchViewModel.launches.observe(this, Observer {
+        launchViewModel.launches.observe(this, Observer { it ->
             it?.let { rvLaunchesAdapter.launches = it }
         })
     }
