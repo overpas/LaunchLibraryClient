@@ -1,9 +1,9 @@
-package by.overpass.soraac.viewmodel
+package by.overpass.soraac.viewmodel.launch
 
 import android.arch.lifecycle.ViewModelProviders
 import android.support.v4.app.Fragment
-import by.overpass.soraac.data.network.datasource.LaunchDataSourceFactory
-import by.overpass.soraac.repository.LaunchRepositoryFactory
+import by.overpass.soraac.data.network.datasource.launch.LaunchDataSourceFactory
+import by.overpass.soraac.repository.launch.LaunchRepositoryFactory
 
 object LaunchViewModelFactory {
 

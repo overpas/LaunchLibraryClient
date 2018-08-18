@@ -1,13 +1,13 @@
-package by.overpass.soraac.model.pojo
+package by.overpass.soraac.data.model.pojo
 
-import by.overpass.soraac.model.pojo.api.LaunchJsonWrapper
+import by.overpass.soraac.data.model.pojo.api.LaunchJsonWrapper
 
 object LaunchConversion {
 
-    fun fromApiToDB(jsonWrapper: LaunchJsonWrapper): List<by.overpass.soraac.model.pojo.db.Launch> {
+    fun fromApiToDB(jsonWrapper: LaunchJsonWrapper): List<by.overpass.soraac.data.model.pojo.db.Launch> {
         val apiLaunches = jsonWrapper.launches
         return apiLaunches.map {
-            by.overpass.soraac.model.pojo.db.Launch(
+            by.overpass.soraac.data.model.pojo.db.Launch(
                     id = it.id,
                     name = it.name,
                     startStamp = it.wsstamp,

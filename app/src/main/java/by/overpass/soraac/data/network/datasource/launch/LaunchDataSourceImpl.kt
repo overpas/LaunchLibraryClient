@@ -1,12 +1,12 @@
-package by.overpass.soraac.data.network.datasource
+package by.overpass.soraac.data.network.datasource.launch
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import by.overpass.soraac.data.network.GetLaunchesService
 import by.overpass.soraac.data.network.retrofit
-import by.overpass.soraac.model.pojo.LaunchConversion
-import by.overpass.soraac.model.pojo.api.LaunchJsonWrapper
-import by.overpass.soraac.model.pojo.db.Launch
+import by.overpass.soraac.data.model.pojo.LaunchConversion
+import by.overpass.soraac.data.model.pojo.api.LaunchJsonWrapper
+import by.overpass.soraac.data.model.pojo.db.Launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

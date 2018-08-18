@@ -10,6 +10,7 @@
         android:id="@+id/flMainFragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/spbLoading"
         android:layout_alignParentTop="true" />
 
     <android.support.design.widget.BottomNavigationView
@@ -17,8 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:elevation="4dp"
-        app:itemBackground="@color/colorDark85PercentOpacity"
+        app:itemBackground="@color/colorPrimary"
         app:itemIconTint="@drawable/selector_menu_item"
         app:itemTextColor="@drawable/selector_menu_item"
         app:menu="@menu/bottom_menu" />
@@ -29,7 +29,6 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/bnvBottomMenu"
         android:background="@color/colorDark85PercentOpacity"
-        android:elevation="4dp"
         android:indeterminate="true"
         android:visibility="gone"
         app:spb_color="@color/colorAccent"

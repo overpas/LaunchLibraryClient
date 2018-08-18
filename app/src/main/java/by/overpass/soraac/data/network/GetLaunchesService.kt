@@ -1,6 +1,6 @@
 package by.overpass.soraac.data.network
 
-import by.overpass.soraac.model.pojo.api.LaunchJsonWrapper
+import by.overpass.soraac.data.model.pojo.api.LaunchJsonWrapper
 import retrofit2.Call
 import retrofit2.http.GET
 

@@ -1,4 +1,4 @@
-package by.overpass.soraac.model.pojo.api
+package by.overpass.soraac.data.model.pojo.api
 
 import com.google.gson.annotations.SerializedName
 

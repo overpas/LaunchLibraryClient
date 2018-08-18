@@ -1,4 +1,4 @@
-package by.overpass.soraac.model.pojo.db
+package by.overpass.soraac.data.model.pojo.db
 
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey

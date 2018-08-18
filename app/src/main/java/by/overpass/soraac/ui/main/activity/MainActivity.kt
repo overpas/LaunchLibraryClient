@@ -8,6 +8,7 @@ import android.view.MenuItem
 import by.overpass.soraac.R
 import by.overpass.soraac.ui.replaceFragment
 import by.overpass.soraac.ui.main.fragment.LaunchesFragment
+import by.overpass.soraac.ui.shortToast
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,8 +26,11 @@ class MainActivity : AppCompatActivity() {
             val searchMenuItem: MenuItem = it.findItem(R.id.action_search_launches)
             val searchView = searchMenuItem.actionView as SearchView
             searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-                override fun onQueryTextSubmit(text: String?): Boolean = true
-                override fun onQueryTextChange(text: String?): Boolean = true
+                override fun onQueryTextSubmit(text: String?): Boolean {
+                    searchView.shortToast(text.toString())
+                    return true
+                }
+                override fun onQueryTextChange(text: String?): Boolean = false
             })
         }
         return super.onCreateOptionsMenu(menu)

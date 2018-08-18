@@ -4,7 +4,7 @@ import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.arch.persistence.room.Database
 import android.content.Context
-import by.overpass.soraac.model.pojo.db.Launch
+import by.overpass.soraac.data.model.pojo.db.Launch
 
 
 @Database(entities = arrayOf(Launch::class), version = 1)
