@@ -2,11 +2,11 @@ package by.overpass.soraac.data.network.datasource.launch
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
-import by.overpass.soraac.data.network.GetLaunchesService
-import by.overpass.soraac.data.network.retrofit
-import by.overpass.soraac.data.model.pojo.LaunchConversion
+import by.overpass.soraac.data.model.pojo.Conversion
 import by.overpass.soraac.data.model.pojo.api.LaunchJsonWrapper
 import by.overpass.soraac.data.model.pojo.db.Launch
+import by.overpass.soraac.data.network.GetLaunchesService
+import by.overpass.soraac.data.network.retrofit
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,7 +23,7 @@ class LaunchDataSourceImpl : ILaunchDataSource {
 
             override fun onResponse(call: Call<LaunchJsonWrapper>?, response: Response<LaunchJsonWrapper>?) {
                 response?.body()?.let {
-                    launches.value = LaunchConversion.fromApiToDB(it)
+                    launches.value = Conversion.LaunchConversion.fromApiToDB(it)
                 }
             }
         })

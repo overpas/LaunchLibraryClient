@@ -15,7 +15,12 @@ data class Launch(
         var netStamp: Long?,
         var locationName: String?,
         var rocketImageURL: String?,
-        var description: String?
+        var description: String?,
+        var vidURL: String?,
+        var infoURL: String?,
+        var location: Location?,
+        var rocket: Rocket?,
+        var missions: List<Mission>?
 ) {
     companion object {
         @JvmStatic
