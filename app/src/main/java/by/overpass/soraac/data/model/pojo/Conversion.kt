@@ -20,7 +20,7 @@ class Conversion {
                         netStamp = it.netstamp,
                         locationName = it.location?.name,
                         rocketImageURL = it.rocket?.imageURL,
-                        description = it.missions?.takeIf { it.size > 0 }?.get(0)?.description,
+                        description = it.missions?.takeIf { it.isNotEmpty() }?.get(0)?.description,
                         infoURL = it.infoURL.toString(),
                         vidURL = it.vidURL.toString(),
                         location = LocationConversion.fromApiToDB(it.location),

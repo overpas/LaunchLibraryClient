@@ -11,7 +11,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class LaunchDataSourceImpl : ILaunchDataSource {
+class RemoteLaunchDataSourceImpl : IRemoteLaunchDataSource {
 
     private val launchService = retrofit.create(GetLaunchesService::class.java)
 

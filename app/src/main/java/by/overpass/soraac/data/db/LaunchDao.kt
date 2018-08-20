@@ -14,7 +14,10 @@ interface LaunchDao {
     @Insert(onConflict = REPLACE)
     fun insert(launch: Launch)
 
-    @Query("SELECT * FROM Launch")
-    fun getAll(): LiveData<Launch>
+    @Insert(onConflict = REPLACE)
+    fun insert(vararg launch: Launch)
+
+    @Query("SELECT * FROM Launch ORDER BY startStamp DESC")
+    fun selectAllOrderedByStartTime(): LiveData<Launch>
 
 }
