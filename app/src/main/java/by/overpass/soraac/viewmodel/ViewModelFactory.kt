@@ -1,19 +1,28 @@
 package by.overpass.soraac.viewmodel
 
-class ViewModelFactory private constructor() {
+import android.arch.lifecycle.ViewModel
+import android.arch.lifecycle.ViewModelProviders
+import android.support.v4.app.Fragment
+import by.overpass.soraac.data.db.datasource.launch.LocalLaunchDataSourceImpl
+import by.overpass.soraac.data.network.datasource.launch.RemoteLaunchDataSourceImpl
+import by.overpass.soraac.repository.launch.LaunchRepositoryImpl
+import by.overpass.soraac.viewmodel.launch.LaunchViewModel
 
-    // TODO
-    /*fun <T : ViewModel> of(theClass: Class<T>) = when (theClass) {
+sealed class ViewModelFactory {
 
-    }*/
+    abstract fun get(fragment: Fragment): ViewModel
 
-    companion object {
-        @Volatile
-        private var instance: ViewModelFactory? = null
+    object Launch : ViewModelFactory() {
+        override fun get(fragment: Fragment) = ViewModelProviders
+                .of(fragment)
+                .get(LaunchViewModel::class.java)
+                .also {
+                    it.launchRepository = LaunchRepositoryImpl(
+                            RemoteLaunchDataSourceImpl(),
+                            LocalLaunchDataSourceImpl()
+                    )
+                }
 
-        fun getInstance() = instance ?: synchronized(ViewModelFactory::class.java) {
-            instance ?: ViewModelFactory().also { instance = it }
-        }
     }
 
 }

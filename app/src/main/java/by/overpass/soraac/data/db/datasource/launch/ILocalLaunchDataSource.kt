@@ -7,6 +7,6 @@ interface ILocalLaunchDataSource {
 
     fun getLaunches(): LiveData<List<Launch>>
 
-    fun addLaunches(vararg launch: Launch)
+    fun addLaunches(launches: List<Launch>)
 
 }

@@ -7,7 +7,7 @@ import android.content.Context
 import by.overpass.soraac.data.model.pojo.db.Launch
 
 
-@Database(entities = arrayOf(Launch::class), version = 1)
+@Database(entities = [Launch::class], version = 1)
 abstract class AppDB : RoomDatabase() {
 
     abstract fun getLaunchDao(): LaunchDao
@@ -15,20 +15,20 @@ abstract class AppDB : RoomDatabase() {
     companion object {
         private var INSTANCE: AppDB? = null
 
-        fun getInstance(context: Context): AppDB? {
-            if (INSTANCE == null) {
-                synchronized(AppDB::class) {
-                    INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            AppDB::class.java, "launchlibrary.db")
+        fun getInstance(context: Context) =
+                INSTANCE ?: synchronized(AppDB::class) {
+                    INSTANCE ?: Room.databaseBuilder(
+                            context.applicationContext,
+                            AppDB::class.java,
+                            "launchlibrary.db")
                             .build()
+                            .also {
+                                INSTANCE = it
+                            }
                 }
-            }
-            return INSTANCE
-        }
-
-        fun destroyInstance() {
-            INSTANCE = null
-        }
     }
 
+    fun destroyInstance() {
+        INSTANCE = null
+    }
 }

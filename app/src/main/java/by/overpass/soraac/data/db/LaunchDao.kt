@@ -18,6 +18,6 @@ interface LaunchDao {
     fun insert(vararg launch: Launch)
 
     @Query("SELECT * FROM Launch ORDER BY startStamp DESC")
-    fun selectAllOrderedByStartTime(): LiveData<Launch>
+    fun selectAllOrderedByStartTime(): LiveData<List<Launch>>
 
 }

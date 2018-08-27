@@ -15,7 +15,7 @@ class RemoteLaunchDataSourceImpl : IRemoteLaunchDataSource {
 
     private val launchService = retrofit.create(GetLaunchesService::class.java)
 
-    override fun getLaunches(): LiveData<List<Launch>> {
+    override fun getObservableLaunches(): LiveData<List<Launch>> {
         val launches: MutableLiveData<List<Launch>> = MutableLiveData()
         launchService.getNext20Launches().enqueue(object : Callback<LaunchJsonWrapper> {
             override fun onFailure(call: Call<LaunchJsonWrapper>?, t: Throwable?) {
@@ -24,6 +24,21 @@ class RemoteLaunchDataSourceImpl : IRemoteLaunchDataSource {
             override fun onResponse(call: Call<LaunchJsonWrapper>?, response: Response<LaunchJsonWrapper>?) {
                 response?.body()?.let {
                     launches.value = Conversion.LaunchConversion.fromApiToDB(it)
+                }
+            }
+        })
+        return launches
+    }
+
+    override fun getLaunches(): List<Launch> {
+        var launches: List<Launch> = ArrayList()
+        launchService.getNext20Launches().enqueue(object : Callback<LaunchJsonWrapper> {
+            override fun onFailure(call: Call<LaunchJsonWrapper>?, t: Throwable?) {
+            }
+
+            override fun onResponse(call: Call<LaunchJsonWrapper>?, response: Response<LaunchJsonWrapper>?) {
+                response?.body()?.let {
+                    launches = Conversion.LaunchConversion.fromApiToDB(it)
                 }
             }
         })
