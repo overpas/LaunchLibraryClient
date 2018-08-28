@@ -11,21 +11,22 @@ class Conversion {
 
         fun fromApiToDB(jsonWrapper: LaunchJsonWrapper): List<by.overpass.soraac.data.model.pojo.db.Launch> {
             val apiLaunches = jsonWrapper.launches
-            return apiLaunches.map {
+            return apiLaunches.map { launch ->
                 by.overpass.soraac.data.model.pojo.db.Launch(
-                        id = it.id,
-                        name = it.name,
-                        startStamp = it.wsstamp,
-                        endStamp = it.westamp,
-                        netStamp = it.netstamp,
-                        locationName = it.location?.name,
-                        rocketImageURL = it.rocket?.imageURL,
-                        description = it.missions?.takeIf { it.isNotEmpty() }?.get(0)?.description,
-                        infoURL = it.infoURL.toString(),
-                        vidURL = it.vidURL.toString(),
-                        location = LocationConversion.fromApiToDB(it.location),
-                        rocket = RocketConversion.fromApiToDB(it.rocket),
-                        missions = MissionConversion.fromApiToDB(it.missions)
+                        id = launch.id,
+                        name = launch.name,
+                        startStamp = launch.wsstamp,
+                        endStamp = launch.westamp,
+                        netStamp = launch.netstamp,
+                        locationName = launch.location?.name,
+                        rocketImageURL = launch.rocket?.imageURL,
+                        description = launch.missions?.takeIf { it.isNotEmpty() }?.get(0)?.description,
+                        infoURL = launch.infoURL.toString(),
+                        vidURL = launch.vidURL.toString(),
+                        mapUrl = launch.location?.pads?.takeIf { it.isNotEmpty() }?.get(0)?.mapURL,
+                        latitude = launch.location?.pads?.takeIf { it.isEmpty() }?.get(0)?.latitude,
+                        longitude = launch.location?.pads?.takeIf { it.isEmpty() }?.get(0)?.longitude,
+                        rocketId = launch.rocket?.id
                 )
             }
         }
@@ -82,15 +83,16 @@ class Conversion {
     object MissionConversion {
 
         fun fromApiToDB(apiMissions: List<MissionInLaunch>?): List<Mission>? {
-            return apiMissions?.map {
+            return apiMissions?.map { missionInLaunch ->
                 Mission(
-                        id = it.id,
-                        name = it.name,
-                        wikiURL = it.wikiURL,
+                        id = missionInLaunch.id,
+                        name = missionInLaunch.name,
+                        wikiURL = missionInLaunch.wikiURL,
                         infoURL = null,
-                        description = it.description,
-                        typeName = it.typeName,
-                        agencies = AgencyConversion.fromApiToDB(it.agencies)
+                        description = missionInLaunch.description,
+                        typeName = missionInLaunch.typeName,
+                        agencyName = missionInLaunch.agencies?.takeIf { it.isNotEmpty() }?.get(0)?.name,
+                        agencyWikiUrl = missionInLaunch.agencies?.takeIf { it.isNotEmpty() }?.get(0)?.wikiURL
                 )
             }
         }

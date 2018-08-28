@@ -16,6 +16,7 @@ class LocalLaunchDataSourceImpl : ILocalLaunchDataSource {
 
     override fun addLaunches(launches: List<Launch>) {
         Log.d(this.javaClass.simpleName, "adding launches: $launches")
+        launchDao.insert(launches)
     }
 
 }

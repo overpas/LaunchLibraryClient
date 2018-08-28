@@ -7,7 +7,7 @@ import android.content.Context
 import by.overpass.soraac.data.model.pojo.db.Launch
 
 
-@Database(entities = [Launch::class], version = 1)
+@Database(entities = [Launch::class], version = 2)
 abstract class AppDB : RoomDatabase() {
 
     abstract fun getLaunchDao(): LaunchDao
