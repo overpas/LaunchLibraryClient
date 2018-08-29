@@ -3,6 +3,7 @@ package by.overpass.soraac.viewmodel.launch
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import android.util.Log
 import by.overpass.soraac.data.db.datasource.launch.LocalLaunchDataSourceImpl
 import by.overpass.soraac.data.model.pojo.db.Launch
 import by.overpass.soraac.data.network.datasource.launch.RemoteLaunchDataSourceImpl
@@ -18,7 +19,8 @@ class LaunchViewModel(
 
     var launches: LiveData<List<Launch>> = MutableLiveData()
         get() {
-            return launchRepository.getLaunches()
+            Log.i(this.javaClass.simpleName, ": getting launches")
+            return launchRepository.launches
         }
 
 }

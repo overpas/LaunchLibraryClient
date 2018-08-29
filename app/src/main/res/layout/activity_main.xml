@@ -21,6 +21,7 @@
         app:itemBackground="@color/colorPrimary"
         app:itemIconTint="@drawable/selector_menu_item"
         app:itemTextColor="@drawable/selector_menu_item"
+        app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_menu" />
 
     <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
