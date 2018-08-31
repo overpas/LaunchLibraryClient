@@ -1,18 +1,24 @@
 package by.overpass.soraac.ui.launch.fragment
 
 
+import android.arch.lifecycle.Observer
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import by.overpass.soraac.R
 import by.overpass.soraac.ui.base.fragment.BaseItemFragment
+import by.overpass.soraac.viewmodel.ViewModelFactory
+import by.overpass.soraac.viewmodel.launch.LaunchViewModel
 
 class LaunchFragment : BaseItemFragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_launch, container, false)
-    }
+    private lateinit var launchViewModel: LaunchViewModel
 
+    override fun getFragmentLayoutId() = R.layout.fragment_launch
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        launchViewModel = ViewModelFactory.Launch.get(this)
+        launchViewModel.launches.observe(this, Observer { it ->
+
+        })
+    }
 }

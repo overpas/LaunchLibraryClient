@@ -1,16 +1,29 @@
 package by.overpass.soraac.ui.base.fragment
 
 import android.os.Bundle
+import android.support.annotation.LayoutRes
 import android.support.v4.app.Fragment
 import android.support.v7.widget.Toolbar
+import android.view.LayoutInflater
 import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
 import by.overpass.soraac.R
 import by.overpass.soraac.ui.setHostActivityToolbar
 
-open class BaseItemFragment : Fragment() {
+abstract class BaseItemFragment : Fragment() {
 
     private val toolbar: Toolbar? by lazy {
         return@lazy this@BaseItemFragment.activity?.findViewById<Toolbar>(R.id.toolbar)
+    }
+
+    @LayoutRes
+    abstract fun getFragmentLayoutId(): Int
+
+    override fun onCreateView(inflater: LayoutInflater,
+                              container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        return inflater.inflate(getFragmentLayoutId(), container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

@@ -1,18 +1,18 @@
 package by.overpass.soraac.ui.launch.activity
 
-import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import by.overpass.soraac.LAUNCH_ID_KEY
 import by.overpass.soraac.R
+import by.overpass.soraac.ui.base.activity.BaseItemActivity
 import by.overpass.soraac.ui.launch.fragment.LaunchFragment
-import by.overpass.soraac.ui.replaceFragment
 
-class LaunchActivity : AppCompatActivity() {
+class LaunchActivity : BaseItemActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_launch)
-        if (savedInstanceState == null) {
-            replaceFragment(R.id.flLaunchFragmentContainer, LaunchFragment(), false)
-        }
-    }
+    override fun getActivityLayoutId() = R.layout.activity_launch
+
+    override fun getFragmentContainerId() = R.id.flLaunchFragmentContainer
+
+    override fun getSelectedItemIdKey() = LAUNCH_ID_KEY
+
+    override fun getItemFragment() = LaunchFragment()
+
 }
