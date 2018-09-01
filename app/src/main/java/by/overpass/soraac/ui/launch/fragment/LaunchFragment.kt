@@ -22,7 +22,6 @@ class LaunchFragment : BaseItemFragment() {
     override fun getFragmentLayoutId() = R.layout.fragment_launch
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        super.onCreateView(inflater, container, savedInstanceState)
         binding = FragmentLaunchBinding.inflate(LayoutInflater.from(context), container, false)
         binding.setLifecycleOwner(this)
         launchViewModel = ViewModelFactory.Launch.get(this)

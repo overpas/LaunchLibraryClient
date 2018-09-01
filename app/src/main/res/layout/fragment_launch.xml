@@ -23,13 +23,18 @@
             android:fitsSystemWindows="true"
             android:theme="@style/AppTheme.AppBarOverlay">
 
-            <android.support.design.widget.CollapsingToolbarLayout
+            <net.opacapp.multilinecollapsingtoolbar.CollapsingToolbarLayout
                 android:id="@+id/toolbarLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fitsSystemWindows="true"
                 app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleGravity="bottom|center_horizontal"
+                app:expandedTitleMarginBottom="@dimen/expanded_title_margin_bottom"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:maxLines="6"
+                app:title="@{launch.name}"
+                app:titleEnabled="true"
                 app:toolbarId="@+id/toolbar">
 
                 <ImageView
@@ -51,11 +56,11 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="160dp"
+                    android:layout_height="@dimen/bottom_dim_height"
                     android:layout_gravity="bottom"
                     android:background="@drawable/scrim" />
 
-            </android.support.design.widget.CollapsingToolbarLayout>
+            </net.opacapp.multilinecollapsingtoolbar.CollapsingToolbarLayout>
         </android.support.design.widget.AppBarLayout>
 
         <android.support.v4.widget.NestedScrollView
@@ -65,11 +70,49 @@
             tools:context=".ui.launch.fragment.LaunchFragment"
             tools:showIn="@layout/fragment_launch">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/text_margin"
-                android:text="@string/large_text" />
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/medium_spacing"
+                android:background="@drawable/bg_description">
+
+                <TextView
+                    android:id="@+id/tvLaunchDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/medium_spacing"
+                    android:text="@{launch.description}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivLocationMarker"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginBottom="@dimen/medium_spacing"
+                    android:layout_marginStart="@dimen/medium_spacing"
+                    android:layout_marginTop="@dimen/small_spacing"
+                    android:contentDescription="@string/text_marker"
+                    android:src="@drawable/ic_location_marker"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvLaunchDescription" />
+
+                <TextView
+                    android:id="@+id/tvLocation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/medium_spacing"
+                    android:layout_marginEnd="@dimen/medium_spacing"
+                    android:layout_marginStart="@dimen/medium_spacing"
+                    android:layout_marginTop="@dimen/small_spacing"
+                    android:text="@{launch.locationName}"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivLocationMarker"
+                    app:layout_constraintTop_toBottomOf="@id/tvLaunchDescription" />
+
+            </android.support.constraint.ConstraintLayout>
 
         </android.support.v4.widget.NestedScrollView>
 
