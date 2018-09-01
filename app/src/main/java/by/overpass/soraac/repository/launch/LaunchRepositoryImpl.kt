@@ -11,6 +11,8 @@ class LaunchRepositoryImpl(
         private val localLaunchDataSource: ILocalLaunchDataSource
 ) : ILaunchRepository {
 
+    override fun getById(id: Int): LiveData<Launch> = localLaunchDataSource.getLaunchById(id)
+
     override val launches: LiveData<List<Launch>>
         get() {
             Log.i(this.javaClass.simpleName, ": putting launches from remote DS to local DS " +

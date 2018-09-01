@@ -7,6 +7,7 @@
     <color name="colorGold">#f2ca00</color>
     <color name="colorDark35PercentOpacity">#59000000</color>
     <color name="colorDark50PercentOpacity">#80000000</color>
+    <color name="colorDark60PercentOpacity">#99000000</color>
     <color name="colorDark80PercentOpacity">#CC000000</color>
     <color name="colorDark85PercentOpacity">#D9000000</color>
     <color name="colorLightBlue">#03A9F4</color>

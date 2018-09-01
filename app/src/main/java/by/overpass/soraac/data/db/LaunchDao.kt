@@ -20,4 +20,7 @@ interface LaunchDao {
     @Query("SELECT * FROM Launch ORDER BY startStamp DESC")
     fun selectAllOrderedByStartTime(): LiveData<List<Launch>>
 
+    @Query("SELECT * FROM Launch WHERE id = :id")
+    fun selectById(id: Int): LiveData<Launch>
+
 }

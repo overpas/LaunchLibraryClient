@@ -6,8 +6,8 @@
     <data>
 
         <variable
-            name="launchViewModel"
-            type="by.overpass.soraac.viewmodel.launch.LaunchViewModel" />
+            name="launch"
+            type="by.overpass.soraac.data.model.pojo.db.Launch" />
     </data>
 
     <android.support.design.widget.CoordinatorLayout
@@ -19,14 +19,14 @@
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appBar"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/app_bar_height"
+            android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
             android:theme="@style/AppTheme.AppBarOverlay">
 
             <android.support.design.widget.CollapsingToolbarLayout
                 android:id="@+id/toolbarLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:fitsSystemWindows="true"
                 app:contentScrim="?attr/colorPrimary"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
@@ -35,11 +35,11 @@
                 <ImageView
                     android:id="@+id/ivHeader"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:contentDescription="@string/hint_header"
                     android:fitsSystemWindows="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/bg_stars"
+                    android:src='@{launch.rocketImageURL ?? "https://s3.amazonaws.com/launchlibrary/RocketImages/placeholder_1920.png"}'
                     app:layout_collapseMode="parallax" />
 
                 <android.support.v7.widget.Toolbar
@@ -48,6 +48,12 @@
                     android:layout_height="?attr/actionBarSize"
                     app:layout_collapseMode="pin"
                     app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/scrim" />
 
             </android.support.design.widget.CollapsingToolbarLayout>
         </android.support.design.widget.AppBarLayout>

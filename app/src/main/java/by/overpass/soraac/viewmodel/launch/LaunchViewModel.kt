@@ -23,4 +23,8 @@ class LaunchViewModel(
             return launchRepository.launches
         }
 
+    fun getById(id: Int): LiveData<Launch> {
+        return launchRepository.getById(id)
+    }
+
 }

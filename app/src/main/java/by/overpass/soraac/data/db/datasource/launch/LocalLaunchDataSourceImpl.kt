@@ -14,6 +14,8 @@ class LocalLaunchDataSourceImpl : ILocalLaunchDataSource {
         return@lazy AppDB.getInstance(SoraacApp.getAppContext()).getLaunchDao()
     }
 
+    override fun getLaunchById(id: Int) = launchDao.selectById(id)
+
     override fun getLaunches(): LiveData<List<Launch>> {
         return launchDao.selectAllOrderedByStartTime().also {
             Log.d(this.javaClass.simpleName, "local launches: ${it.value}")
