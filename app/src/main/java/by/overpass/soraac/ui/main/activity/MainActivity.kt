@@ -1,26 +1,16 @@
 package by.overpass.soraac.ui.main.activity
 
-import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.SearchView
 import android.view.Menu
 import android.view.MenuItem
 import by.overpass.soraac.R
-import by.overpass.soraac.ui.replaceFragment
-import by.overpass.soraac.ui.main.fragment.LaunchesFragment
+import by.overpass.soraac.ui.base.activity.BaseNavigationActivity
 import by.overpass.soraac.ui.shortToast
 
-class MainActivity : AppCompatActivity() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        if (savedInstanceState == null) {
-            replaceFragment(R.id.flMainFragmentContainer, LaunchesFragment(), false)
-        }
-    }
+class MainActivity : BaseNavigationActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        // TODO Change all this
         menuInflater.inflate(R.menu.launches_top_menu, menu)
         menu?.let {
             val searchMenuItem: MenuItem = it.findItem(R.id.action_search_launches)
@@ -30,9 +20,14 @@ class MainActivity : AppCompatActivity() {
                     searchView.shortToast(text.toString())
                     return true
                 }
+
                 override fun onQueryTextChange(text: String?): Boolean = false
             })
         }
         return super.onCreateOptionsMenu(menu)
     }
+
+    override fun getFragmentContainerId() = R.id.flMainFragmentContainer
+
+    override fun getActivityLayoutId() = R.layout.activity_main
 }

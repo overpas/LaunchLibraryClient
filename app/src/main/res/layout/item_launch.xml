@@ -16,6 +16,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:foreground="?android:attr/selectableItemBackground"
         card_view:cardBackgroundColor="@color/colorDark50PercentOpacity"
         card_view:cardCornerRadius="6dp"
         card_view:cardElevation="8dp">

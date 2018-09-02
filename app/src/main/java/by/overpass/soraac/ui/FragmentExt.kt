@@ -10,3 +10,6 @@ fun Fragment.setHostActivityToolbar(toolbar: Toolbar) {
         activity.setSupportActionBar(toolbar)
     }
 }
+
+val Fragment.simpleName: String
+    get() = this::class.java.simpleName
