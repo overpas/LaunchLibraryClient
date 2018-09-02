@@ -8,6 +8,10 @@
         <variable
             name="launch"
             type="by.overpass.soraac.data.model.pojo.db.Launch" />
+
+        <variable
+            name="mapOpener"
+            type="by.overpass.soraac.ui.launch.fragment.LaunchFragment.MapOpener" />
     </data>
 
     <android.support.design.widget.CoordinatorLayout
@@ -106,6 +110,7 @@
                     android:layout_marginEnd="@dimen/medium_spacing"
                     android:layout_marginStart="@dimen/medium_spacing"
                     android:layout_marginTop="@dimen/small_spacing"
+                    android:onClick="@{() -> mapOpener.open(launch.mapUrl)}"
                     android:text="@{launch.locationName}"
                     android:textStyle="italic"
                     app:layout_constraintEnd_toEndOf="parent"
