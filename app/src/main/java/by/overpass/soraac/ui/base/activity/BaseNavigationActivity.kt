@@ -12,8 +12,8 @@ import by.overpass.soraac.ui.main.fragment.LaunchesFragment
 import by.overpass.soraac.ui.main.fragment.MissionsFragment
 import by.overpass.soraac.ui.main.fragment.RocketsFragment
 import by.overpass.soraac.ui.main.fragment.SettingsFragment
-import by.overpass.soraac.ui.simpleName
-import by.overpass.soraac.ui.replaceFragment
+import by.overpass.soraac.utils.simpleName
+import by.overpass.soraac.utils.replaceFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
@@ -40,7 +40,7 @@ abstract class BaseNavigationActivity : AppCompatActivity(), BottomNavigationVie
     @LayoutRes
     protected abstract fun getActivityLayoutId(): Int
 
-    protected fun switchTo(fragment: Fragment) {
+    private fun switchTo(fragment: Fragment) {
         if (fragmentNamesStack.isEmpty() || fragment.simpleName == fragmentNamesStack.peek()) {
             return
         }

@@ -1,4 +1,4 @@
-package by.overpass.soraac.ui
+package by.overpass.soraac.utils
 
 import android.support.annotation.StringRes
 import android.support.design.widget.Snackbar

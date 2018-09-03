@@ -15,4 +15,5 @@ const val DEFAULT_MAP_LINK = "http://maps.google.com/maps?q=0+N,0+W"
  * TODO: List screens transition on the main screen
  * TODO: Settings (about, themes)
  * TODO: Implement themes changing
+ * TODO: Implement searching
  */

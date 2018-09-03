@@ -6,7 +6,7 @@ import android.support.annotation.IdRes
 import android.support.annotation.LayoutRes
 import android.support.v7.app.AppCompatActivity
 import by.overpass.soraac.ui.base.fragment.BaseItemFragment
-import by.overpass.soraac.ui.replaceFragment
+import by.overpass.soraac.utils.replaceFragment
 
 abstract class BaseItemActivity : AppCompatActivity() {
 

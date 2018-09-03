@@ -5,7 +5,7 @@ import android.view.Menu
 import android.view.MenuItem
 import by.overpass.soraac.R
 import by.overpass.soraac.ui.base.activity.BaseNavigationActivity
-import by.overpass.soraac.ui.shortToast
+import by.overpass.soraac.utils.shortToast
 
 class MainActivity : BaseNavigationActivity() {
 

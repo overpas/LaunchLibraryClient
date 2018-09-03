@@ -9,7 +9,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import by.overpass.soraac.R
-import by.overpass.soraac.ui.setHostActivityToolbar
+import by.overpass.soraac.utils.setHostActivityToolbar
 
 abstract class BaseItemFragment : Fragment() {
 

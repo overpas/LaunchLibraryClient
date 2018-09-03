@@ -1,4 +1,4 @@
-package by.overpass.soraac.ui
+package by.overpass.soraac.utils
 
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
@@ -10,6 +10,3 @@ fun Fragment.setHostActivityToolbar(toolbar: Toolbar) {
         activity.setSupportActionBar(toolbar)
     }
 }
-
-val Fragment.simpleName: String
-    get() = this::class.java.simpleName
