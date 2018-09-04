@@ -7,7 +7,7 @@ data class Rocket(
         @SerializedName("name") var name: String?,
         @SerializedName("configuration") var configuration: String?,
         @SerializedName("defaultPads") var defaultPads: String?,
-        @SerializedName("familyInRocket") var familyInRocket: FamilyInRocket?,
+        @SerializedName("family") var family: FamilyInRocket?,
         @SerializedName("infoURL") var infoURL: Any?,
         @SerializedName("wikiURL") var wikiURL: String?,
         @SerializedName("infoURLs") var infoURLs: List<String?>?,

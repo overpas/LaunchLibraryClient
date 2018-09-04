@@ -26,9 +26,7 @@ class LocalLaunchDataSourceImpl : ILocalLaunchDataSource {
         launch(CommonPool) {
             Log.d(this.javaClass.simpleName, "adding launches: $launches " +
                     "in ${Thread.currentThread().name} thread")
-            for (launch in launches) {
-                launchDao.insert(launch)
-            }
+            launches.forEach { launchDao.insert(it) }
         }
     }
 

@@ -5,7 +5,7 @@ import android.arch.lifecycle.MutableLiveData
 import by.overpass.soraac.data.model.pojo.Conversion
 import by.overpass.soraac.data.model.pojo.api.LaunchJsonWrapper
 import by.overpass.soraac.data.model.pojo.db.Launch
-import by.overpass.soraac.data.network.GetLaunchesService
+import by.overpass.soraac.data.network.api.GetLaunchesApi
 import by.overpass.soraac.data.network.retrofit
 import retrofit2.Call
 import retrofit2.Callback
@@ -13,7 +13,7 @@ import retrofit2.Response
 
 class RemoteLaunchDataSourceImpl : IRemoteLaunchDataSource {
 
-    private val launchService = retrofit.create(GetLaunchesService::class.java)
+    private val launchService = retrofit.create(GetLaunchesApi::class.java)
 
     override fun getLaunches(): LiveData<List<Launch>> {
         val launches: MutableLiveData<List<Launch>> = MutableLiveData()

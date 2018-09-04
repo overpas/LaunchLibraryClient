@@ -1,6 +1,7 @@
 package by.overpass.soraac
 
 const val LAUNCH_ID_KEY = "LAUNCH_ID_KEY"
+const val ROCKET_ID_KEY = "ROCKET_ID_KEY"
 const val DEFAULT_MAP_LINK = "http://maps.google.com/maps?q=0+N,0+W"
 
 /**
