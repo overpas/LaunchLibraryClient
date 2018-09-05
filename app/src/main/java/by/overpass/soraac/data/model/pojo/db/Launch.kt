@@ -25,6 +25,7 @@ data class Launch(
         /**/
         var rocketId: Int?
 ) {
+    // TODO: Probably provide as delegate
     companion object {
         @JvmStatic
         @BindingAdapter("android:src")

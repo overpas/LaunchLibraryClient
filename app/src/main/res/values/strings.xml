@@ -108,4 +108,6 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="label_rockets">Rockets</string>
+    <string name="message_no_wiki">Sorry, this rocket doesn\'t have a dedicated wiki page</string>
 </resources>

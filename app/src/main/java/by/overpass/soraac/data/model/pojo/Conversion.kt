@@ -31,23 +31,6 @@ class Conversion {
         }
     }
 
-    object PadConversion {
-        fun fromApiToDB(apiPads: List<PadInLaunch>?): List<Pad>? {
-            return apiPads?.map {
-                Pad(
-                        id = it.id,
-                        name = it.name,
-                        wikiURL = it.wikiURL,
-                        infoURL = it.infoURL,
-                        latitude = it.latitude,
-                        longitude = it.longitude,
-                        mapURL = it.mapURL
-                )
-            }
-        }
-    }
-
-
     object RocketConversion {
         fun fromApiToDB(jsonWrapper: RocketsJsonWrapper): List<Rocket> {
             val apiRockets = jsonWrapper.rockets
@@ -57,7 +40,7 @@ class Conversion {
                 apiRockets.map { rocket ->
                     Rocket(
                             id = rocket?.id,
-                            infoURL = rocket?.infoURL,
+                            infoURL = rocket?.infoURL.toString(),
                             imageURL = rocket?.imageURL,
                             name = rocket?.name,
                             wikiURL = rocket?.wikiURL

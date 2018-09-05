@@ -10,7 +10,7 @@ import by.overpass.soraac.ui.main.adapter.diff.LaunchesDiffUtilCallback
 import by.overpass.soraac.ui.main.listener.OnLaunchClickListener
 
 
-class StubRvAdapter : RecyclerView.Adapter<StubRvAdapter.StubViewHolder>() {
+class StubLaunchesAdapter : RecyclerView.Adapter<StubLaunchesAdapter.LaunchViewHolder>() {
 
     var launches: List<Launch> = arrayListOf()
         set(value) {
@@ -20,8 +20,8 @@ class StubRvAdapter : RecyclerView.Adapter<StubRvAdapter.StubViewHolder>() {
             diffResult.dispatchUpdatesTo(this)
         }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StubViewHolder {
-        return StubViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LaunchViewHolder {
+        return LaunchViewHolder(
                 ItemLaunchBinding.inflate(
                         LayoutInflater.from(parent.context),
                         parent,
@@ -32,11 +32,11 @@ class StubRvAdapter : RecyclerView.Adapter<StubRvAdapter.StubViewHolder>() {
 
     override fun getItemCount() = launches.size
 
-    override fun onBindViewHolder(holder: StubViewHolder, position: Int) {
-        holder.binding.launch = launches[position]
-        holder.itemView.setOnClickListener(OnLaunchClickListener(launches[position].id!!))
+    override fun onBindViewHolder(holderRocket: LaunchViewHolder, position: Int) {
+        holderRocket.binding.launch = launches[position]
+        holderRocket.itemView.setOnClickListener(OnLaunchClickListener(launches[position].id!!))
     }
 
-    class StubViewHolder(val binding: ItemLaunchBinding) : RecyclerView.ViewHolder(binding.root)
+    class LaunchViewHolder(val binding: ItemLaunchBinding) : RecyclerView.ViewHolder(binding.root)
 
 }

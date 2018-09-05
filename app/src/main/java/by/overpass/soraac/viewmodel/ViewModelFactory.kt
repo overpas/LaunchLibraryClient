@@ -16,7 +16,7 @@ sealed class ViewModelFactory {
 
     abstract fun get(fragment: Fragment): ViewModel
 
-    object Launch : ViewModelFactory() {
+    object LaunchFactory : ViewModelFactory() {
         override fun get(fragment: Fragment) = ViewModelProviders
                 .of(fragment)
                 .get(LaunchViewModel::class.java)
@@ -29,7 +29,7 @@ sealed class ViewModelFactory {
 
     }
 
-    object Rocket : ViewModelFactory() {
+    object RocketFactory : ViewModelFactory() {
         override fun get(fragment: Fragment) = ViewModelProviders
                 .of(fragment)
                 .get(RocketViewModel::class.java)

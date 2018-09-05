@@ -29,7 +29,7 @@ class LaunchFragment : BaseItemFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentLaunchBinding.inflate(LayoutInflater.from(context), container, false)
         binding.setLifecycleOwner(this)
-        launchViewModel = ViewModelFactory.Launch.get(this)
+        launchViewModel = ViewModelFactory.LaunchFactory.get(this)
         arguments?.getInt(LAUNCH_ID_KEY)?.let { launchId ->
             launchViewModel.getById(launchId).observe(this, Observer { launch ->
                 Log.i(this@LaunchFragment::class.java.simpleName, "OBSERVE!")
