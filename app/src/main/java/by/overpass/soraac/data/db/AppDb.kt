@@ -5,17 +5,21 @@ import android.arch.persistence.room.RoomDatabase
 import android.arch.persistence.room.Database
 import android.content.Context
 import by.overpass.soraac.data.db.dao.LaunchDao
+import by.overpass.soraac.data.db.dao.MissionDao
 import by.overpass.soraac.data.db.dao.RocketDao
 import by.overpass.soraac.data.model.pojo.db.Launch
+import by.overpass.soraac.data.model.pojo.db.Mission
 import by.overpass.soraac.data.model.pojo.db.Rocket
 
 
-@Database(entities = [Launch::class, Rocket::class], version = 3)
+@Database(entities = [Launch::class, Rocket::class, Mission::class], version = 4)
 abstract class AppDB : RoomDatabase() {
 
     abstract fun getLaunchDao(): LaunchDao
 
     abstract fun getRocketDao(): RocketDao
+
+    abstract fun getMissionDao(): MissionDao
 
     companion object {
         private var INSTANCE: AppDB? = null

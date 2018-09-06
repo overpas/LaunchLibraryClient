@@ -48,6 +48,24 @@ class Conversion {
                 }
             }
         }
+    }
 
+    object MissionConversion {
+        fun fromApiToDB(jsonWrapper: MissionsJsonWrapper): List<Mission> {
+            val apiMissions = jsonWrapper.compactMissions
+            return if (apiMissions == null) {
+                listOf()
+            } else {
+                apiMissions.map { mission ->
+                    Mission(
+                            id = mission?.id,
+                            wikiURL = mission?.wikiURL,
+                            name = mission?.name,
+                            infoURL = mission?.infoURL,
+                            description = mission?.description
+                    )
+                }
+            }
+        }
     }
 }
