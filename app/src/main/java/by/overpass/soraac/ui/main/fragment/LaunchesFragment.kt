@@ -8,7 +8,6 @@ import android.support.v7.widget.Toolbar
 import by.overpass.soraac.R
 import by.overpass.soraac.ui.base.fragment.BaseItemsFragment
 import by.overpass.soraac.ui.main.adapter.StubLaunchesAdapter
-import by.overpass.soraac.viewmodel.ViewModelFactory
 import by.overpass.soraac.viewmodel.launch.LaunchViewModel
 import kotlinx.android.synthetic.main.fragment_launches.*
 
@@ -26,7 +25,7 @@ class LaunchesFragment : BaseItemsFragment() {
         rvLaunchList.layoutManager = LinearLayoutManager(context)
         launchesAdapter = StubLaunchesAdapter()
         rvLaunchList.adapter = launchesAdapter
-        launchViewModel = ViewModelFactory.LaunchFactory.get(this)
+        launchViewModel = LaunchViewModel.Factory.get(this)
         launchViewModel.launches.observe(this, Observer { it ->
             it?.let { launchesAdapter.launches = it }
         })

@@ -37,6 +37,6 @@ class StubLaunchesAdapter : RecyclerView.Adapter<StubLaunchesAdapter.LaunchViewH
         holderRocket.itemView.setOnClickListener(OnLaunchClickListener(launches[position].id!!))
     }
 
-    class LaunchViewHolder(val binding: ItemLaunchBinding) : RecyclerView.ViewHolder(binding.root)
+    class LaunchViewHolder(internal val binding: ItemLaunchBinding) : RecyclerView.ViewHolder(binding.root)
 
 }

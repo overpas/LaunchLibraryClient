@@ -3,14 +3,11 @@ package by.overpass.soraac.ui.main.fragment
 
 import android.arch.lifecycle.Observer
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.StaggeredGridLayoutManager
 import android.support.v7.widget.Toolbar
 import by.overpass.soraac.R
 import by.overpass.soraac.ui.base.fragment.BaseItemsFragment
 import by.overpass.soraac.ui.main.adapter.StubRocketsAdapter
-import by.overpass.soraac.viewmodel.ViewModelFactory
 import by.overpass.soraac.viewmodel.rocket.RocketViewModel
 import kotlinx.android.synthetic.main.fragment_rockets.*
 
@@ -30,7 +27,7 @@ class RocketsFragment : BaseItemsFragment() {
         )
         rocketsAdapter = StubRocketsAdapter()
         rvRocketList.adapter = rocketsAdapter
-        rocketViewModel = ViewModelFactory.RocketFactory.get(this)
+        rocketViewModel = RocketViewModel.Factory.get(this)
         rocketViewModel.rockets.observe(this, Observer { rockets ->
             rockets?.let { rocketsAdapter.rockets = it }
         })

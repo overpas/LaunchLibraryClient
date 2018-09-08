@@ -1,13 +1,21 @@
 package by.overpass.soraac.ui.mission.activity
 
-import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
+import by.overpass.soraac.MISSION_ID_KEY
 import by.overpass.soraac.R
+import by.overpass.soraac.ui.base.activity.BaseItemActivity
+import by.overpass.soraac.ui.base.fragment.BaseItemFragment
+import by.overpass.soraac.ui.main.fragment.MissionsFragment
 
-class MissionActivity : AppCompatActivity() {
+class MissionActivity : BaseItemActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_mission)
+    override fun getActivityLayoutId() = R.layout.activity_mission
+
+    override fun getFragmentContainerId() = R.id.flMissionFragmentContainer
+
+    override fun getSelectedItemIdKey() = MISSION_ID_KEY
+
+    override fun getItemFragment(): BaseItemFragment {
+        TODO()
     }
+
 }
