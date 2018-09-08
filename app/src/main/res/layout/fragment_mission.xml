@@ -1,14 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.mission.fragment.MissionFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+        <variable
+            name="mission"
+            type="by.overpass.soraac.data.model.pojo.db.Mission" />
+
+        <variable
+            name="missionWikiOpener"
+            type="by.overpass.soraac.ui.mission.fragment.MissionFragment.MissionWikiOpener" />
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".ui.mission.fragment.MissionFragment">
 
-</FrameLayout>
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:title="@{mission.name}" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <RelativeLayout
+            android:layout_margin="@dimen/small_spacing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_description"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <TextView
+                android:id="@+id/tvMissionDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="@dimen/small_spacing"
+                android:text="@{mission.description}" />
+
+            <ImageView
+                android:id="@+id/ivWiki"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/tvMissionDescription"
+                android:layout_marginBottom="@dimen/medium_spacing"
+                android:layout_marginStart="@dimen/medium_spacing"
+                android:layout_marginTop="@dimen/small_spacing"
+                android:contentDescription="@string/text_marker"
+                android:src="@drawable/ic_wiki" />
+
+            <TextView
+                android:id="@+id/tvMissionWikiUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvMissionDescription"
+                android:layout_marginBottom="@dimen/medium_spacing"
+                android:layout_marginEnd="@dimen/medium_spacing"
+                android:layout_marginStart="@dimen/medium_spacing"
+                android:layout_marginTop="@dimen/small_spacing"
+                android:layout_toEndOf="@id/ivWiki"
+                android:onClick="@{() -> missionWikiOpener.open(mission.wikiURL)}"
+                android:text="@{mission.wikiURL}"
+                android:textStyle="italic" />
+
+        </RelativeLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>

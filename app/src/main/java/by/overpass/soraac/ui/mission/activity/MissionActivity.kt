@@ -5,6 +5,7 @@ import by.overpass.soraac.R
 import by.overpass.soraac.ui.base.activity.BaseItemActivity
 import by.overpass.soraac.ui.base.fragment.BaseItemFragment
 import by.overpass.soraac.ui.main.fragment.MissionsFragment
+import by.overpass.soraac.ui.mission.fragment.MissionFragment
 
 class MissionActivity : BaseItemActivity() {
 
@@ -14,8 +15,6 @@ class MissionActivity : BaseItemActivity() {
 
     override fun getSelectedItemIdKey() = MISSION_ID_KEY
 
-    override fun getItemFragment(): BaseItemFragment {
-        TODO()
-    }
+    override fun getItemFragment() = MissionFragment()
 
 }

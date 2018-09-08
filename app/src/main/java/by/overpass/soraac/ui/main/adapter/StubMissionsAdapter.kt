@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import by.overpass.soraac.data.model.pojo.db.Mission
 import by.overpass.soraac.databinding.ItemMissionBinding
 import by.overpass.soraac.ui.main.adapter.diff.MissionsDiffUtilCallback
+import by.overpass.soraac.ui.main.listener.OnMissionClickListener
 
 class StubMissionsAdapter : RecyclerView.Adapter<StubMissionsAdapter.MissionViewHolder>() {
 
@@ -32,7 +33,7 @@ class StubMissionsAdapter : RecyclerView.Adapter<StubMissionsAdapter.MissionView
 
     override fun onBindViewHolder(holder: MissionViewHolder, position: Int) {
         holder.binding.mission = missions[position]
-        // TODO: Set click listener
+        holder.itemView.setOnClickListener(OnMissionClickListener(missions[position].id!!))
     }
 
     class MissionViewHolder(internal val binding: ItemMissionBinding) : RecyclerView.ViewHolder(binding.root)

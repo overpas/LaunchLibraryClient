@@ -44,7 +44,7 @@ class LaunchFragment : BaseItemFragment() {
         binding.mapOpener = MapOpener(tvLocation)
     }
 
-    class MapOpener(val view: View) {
+    class MapOpener(private val view: View) {
         fun open(mapLink: String?) {
             view.context?.startActivity(
                     Intent(Intent.ACTION_VIEW, Uri.parse(mapLink ?: DEFAULT_MAP_LINK))
