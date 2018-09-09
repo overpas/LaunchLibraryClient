@@ -45,6 +45,9 @@ abstract class BaseNavigationActivity : AppCompatActivity(), BottomNavigationVie
             return
         }
         val transaction = supportFragmentManager.beginTransaction()
+        transaction.setCustomAnimations(
+                android.R.anim.fade_in, android.R.anim.fade_out
+        )
         val topFragment = supportFragmentManager.findFragmentByTag(fragmentNamesStack.peek())
         if (topFragment != null) {
             transaction.hide(topFragment)
