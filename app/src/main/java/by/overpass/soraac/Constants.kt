@@ -9,8 +9,8 @@ const val DEFAULT_WIKI_LINK = "https://en.wikipedia.org/wiki/Wiki"
 /**
  * The vital question or what is to be done
  * TODO: Custom countdown view (with publishing on the web)
- * TODO: Implement progress indication
  * TODO: Settings (about, themes)
  * TODO: Implement themes changing
  * TODO: Implement searching
+ * TODO: Schedule updates with WorkManager
  */

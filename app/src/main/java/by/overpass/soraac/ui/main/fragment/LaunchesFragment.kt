@@ -26,8 +26,10 @@ class LaunchesFragment : BaseItemsFragment() {
         launchesAdapter = StubLaunchesAdapter()
         rvLaunchList.adapter = launchesAdapter
         launchViewModel = LaunchViewModel.Factory.get(this)
-        launchViewModel.launches.observe(this, Observer { it ->
-            it?.let { launchesAdapter.launches = it }
+        launchViewModel.launches.observe(this, Observer { list ->
+            list?.let {
+                launchesAdapter.launches = it
+            }
         })
     }
 }
