@@ -9,7 +9,7 @@ import by.overpass.soraac.databinding.ItemMissionBinding
 import by.overpass.soraac.ui.main.adapter.diff.MissionsDiffUtilCallback
 import by.overpass.soraac.ui.main.listener.OnMissionClickListener
 
-class StubMissionsAdapter : RecyclerView.Adapter<StubMissionsAdapter.MissionViewHolder>() {
+class MissionsAdapter : RecyclerView.Adapter<MissionsAdapter.MissionViewHolder>() {
 
     var missions: List<Mission> = arrayListOf()
         set(value) {

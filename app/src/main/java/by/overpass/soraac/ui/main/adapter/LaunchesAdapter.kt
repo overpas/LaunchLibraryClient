@@ -10,7 +10,7 @@ import by.overpass.soraac.ui.main.adapter.diff.LaunchesDiffUtilCallback
 import by.overpass.soraac.ui.main.listener.OnLaunchClickListener
 
 
-class StubLaunchesAdapter : RecyclerView.Adapter<StubLaunchesAdapter.LaunchViewHolder>() {
+class LaunchesAdapter : RecyclerView.Adapter<LaunchesAdapter.LaunchViewHolder>() {
 
     var launches: List<Launch> = arrayListOf()
         set(value) {

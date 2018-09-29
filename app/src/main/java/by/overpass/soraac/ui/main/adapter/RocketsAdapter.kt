@@ -10,7 +10,7 @@ import by.overpass.soraac.databinding.ItemRocketBinding
 import by.overpass.soraac.ui.main.adapter.diff.RocketsDiffUtilCallback
 import by.overpass.soraac.ui.rocket.RocketWikiOpener
 
-class StubRocketsAdapter : RecyclerView.Adapter<StubRocketsAdapter.RocketViewHolder>() {
+class RocketsAdapter : RecyclerView.Adapter<RocketsAdapter.RocketViewHolder>() {
 
     var rockets: List<Rocket> = arrayListOf()
         set(value) {
